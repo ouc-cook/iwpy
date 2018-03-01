@@ -30,6 +30,6 @@ def m2k(m, wvfreq, f0, N):
 
     """
 
-    k = m / iwChar(wvfreq, f0, N)
+    k = m * iwChar(wvfreq, f0, N)
 
     return k
