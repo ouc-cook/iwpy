@@ -4,14 +4,14 @@ import numpy as np
 def wavedomain(xlim, ylim = np.NaN, zlim = np.NaN, tlim = np.NaN):
     """ Create a dictionary defining the boundaries
     of the domain. This can then be accessed by higher
-    level functions to create the visualization, using
-    the specified domain.
+    level functions to create visualizations on the
+    specified domain.
     """
+    
+    domainBndry = {}
+    domainBndry['xlim'] = xlim
+    domainBndry['ylim'] = ylim
+    domainBndry['zlim'] = zlim
+    domainBndry['tlim'] = tlim
 
-    domainInfo = {}
-    domainInfo['xlim'] = xlim
-    domainInfo['ylim'] = ylim
-    domainInfo['zlim'] = zlim
-    domainInfo['tlim'] = tlim
-
-    return domainInfo
+    return domainBndry
