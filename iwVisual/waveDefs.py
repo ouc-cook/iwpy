@@ -25,18 +25,21 @@ class PlaneWave1d:
                                self.phi0)
 
     # ------------------------------------
-    def plotwave(i):
+    def plotwave(self, ax, i = 0):
     #    ax.clear()
-        ax.plot(wave.domainGrid['xg'], wave1d(t[i]))
+    #    ax.plot(wave.domainGrid['xg'], wave1d(t[i]))
+        ax.plot(self.xg, self.wave1d(self.tg[i]))
 
     # ------------------------------------
-    def moviewave(fig):
-        animation.FuncAnimation(fig,
-                                plotwave,
-                                frames = range(1, len(test_data)),
-                                interval = 1000, repeat = False)
+#    def moviewave(fig):
+#        animation.FuncAnimation(fig,
+#                                plotwave,
+#                                frames = range(1, len(test_data)),
+#                                interval = 1000, repeat = False)
 
     # ------------------------------------
-    def planewave1d(wave):
-        for i  in wave.domainGrid['tg']:
-            plot(wave.domainGrid['xg'], wave.wave1d(i))
+    def moviewave(self, ax):
+        for i in self.tg:
+            ax.clear()
+            plotwave(ax, i)
+            plt.pause(0.1)
