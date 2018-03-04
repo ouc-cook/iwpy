@@ -25,10 +25,11 @@ class PlaneWave1d:
                                self.phi0)
 
     # ------------------------------------
-    def plotwave(self, ax, i = 0):
+    def plotwave(self, ax = plt.gca(), i = 0):
     #    ax.clear()
     #    ax.plot(wave.domainGrid['xg'], wave1d(t[i]))
         ax.plot(self.xg, self.wave1d(self.tg[i]))
+        plt.show()
 
     # ------------------------------------
 #    def moviewave(fig):
