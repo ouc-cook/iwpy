@@ -29,11 +29,16 @@ class PlaneWave1d:
                                self.phi0)
 
     # ------------------------------------
-    def plotwave(self, ax = plt.gca(), i = 0):
+    def plotwave(self, i = 0, fig = None, ax = None):
         """ Plot the wave at a given time....improve.
         """
     #    ax.clear()
     #    ax.plot(wave.domainGrid['xg'], wave1d(t[i]))
+        if fig is None:
+            fig = plt.figure()
+        if ax is None:
+            ax = fig.add_subplot(111)
+
         ax.plot(self.xg, self.wave1d(self.tg[i]))
         plt.show()
 
