@@ -20,12 +20,18 @@ class PlaneWave1d:
     # ------------------------------------
     # Create array with n lines where n = len(t)
     def wave1d(self, t = tg):
+        """ Compute the wave values at a given
+        time, at the spatial grid points of the
+        PlaneWave1d variable.
+        """
         return self.a * np.cos(self.k * self.xg +
                                self.wvfreq * t +
                                self.phi0)
 
     # ------------------------------------
     def plotwave(self, ax = plt.gca(), i = 0):
+        """ Plot the wave at a given time....improve.
+        """
     #    ax.clear()
     #    ax.plot(wave.domainGrid['xg'], wave1d(t[i]))
         ax.plot(self.xg, self.wave1d(self.tg[i]))
@@ -40,6 +46,9 @@ class PlaneWave1d:
 
     # ------------------------------------
     def moviewave(self, ax):
+        """ Create an animation by plotting
+        the wave at sequential.
+        """
         for i in self.tg:
             ax.clear()
             plotwave(ax, i)
